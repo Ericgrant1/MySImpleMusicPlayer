@@ -14,6 +14,7 @@
 		523041CB2484145700056174 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 523041CA2484145700056174 /* Assets.xcassets */; };
 		523041CE2484145700056174 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 523041CC2484145700056174 /* LaunchScreen.storyboard */; };
 		523041DC248421BE00056174 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 523041DB248421BE00056174 /* .gitignore */; };
+		523041DE24842F0C00056174 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523041DD24842F0C00056174 /* MainTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		523041CF2484145700056174 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		523041DA24841D3C00056174 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		523041DB248421BE00056174 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		523041DD24842F0C00056174 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				523041C12484145500056174 /* AppDelegate.swift */,
 				523041C32484145500056174 /* SceneDelegate.swift */,
 				523041C52484145500056174 /* ViewController.swift */,
+				523041DD24842F0C00056174 /* MainTabBarController.swift */,
 				523041C72484145500056174 /* Main.storyboard */,
 				523041CA2484145700056174 /* Assets.xcassets */,
 				523041CC2484145700056174 /* LaunchScreen.storyboard */,
@@ -146,6 +149,7 @@
 			files = (
 				523041C62484145500056174 /* ViewController.swift in Sources */,
 				523041C22484145500056174 /* AppDelegate.swift in Sources */,
+				523041DE24842F0C00056174 /* MainTabBarController.swift in Sources */,
 				523041C42484145500056174 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
