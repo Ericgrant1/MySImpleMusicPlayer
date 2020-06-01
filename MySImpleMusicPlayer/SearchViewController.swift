@@ -9,9 +9,23 @@
 import Foundation
 import UIKit
 
+struct TrackModel {
+    var trackName: String
+    var artistName: String
+}
+
+private let reuseIdentifier = "SearchCell"
+
 class SearchViewController: UITableViewController {
     
     // MARK: - Properties
+    
+    let searchController = UISearchController(searchResultsController: nil)
+    
+    let arrayTracks = [
+        TrackModel(trackName: "Alone", artistName: "Ava Max"),
+        TrackModel(trackName: "Uncover", artistName: "Zara Larsson")
+    ]
     
     // MARK: - Lifecycle
     
@@ -19,7 +33,40 @@ class SearchViewController: UITableViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .white
+        
+        setupSearchBar()
+        
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
     }
     
     // MARK: - Helper Functions
+    
+    private func setupSearchBar() {
+        navigationItem.searchController = searchController
+        searchController.searchBar.delegate = self
+    }
+    
+    // MARK: - UITableViewDelegate/DataSource
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return arrayTracks.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
+        let track = arrayTracks[indexPath.row]
+        cell.textLabel?.text = "\(track.trackName)\n\(track.artistName)"
+        cell.textLabel?.numberOfLines = 2
+        cell.imageView?.image = #imageLiteral(resourceName: "ely_mountain")
+        return cell
+    }
+}
+
+// MARK: - UISearchBarDelegate
+
+extension SearchViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print("DEBUG: \(searchText)")
+    }
 }
