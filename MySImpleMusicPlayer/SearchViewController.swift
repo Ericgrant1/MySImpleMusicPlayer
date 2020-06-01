@@ -11,9 +11,15 @@ import UIKit
 
 class SearchViewController: UITableViewController {
     
+    // MARK: - Properties
+    
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .white
     }
+    
+    // MARK: - Helper Functions
 }

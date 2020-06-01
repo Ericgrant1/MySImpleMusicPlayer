@@ -11,6 +11,10 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
     
+    // MARK: - Properties
+    
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,6 +27,10 @@ class MainTabBarController: UITabBarController {
             generateViewController(rooviewController: ViewController(), image: #imageLiteral(resourceName: "ios10-apple-music-library-5nav-icon"), title: "Library")
         ]
     }
+    
+    // MARK: - Selectors
+    
+    // MARK: - Helper Functions
     
     func generateViewController(rooviewController: UIViewController, image: UIImage, title: String) -> UIViewController {
         let navigationVC = UINavigationController(rootViewController: rooviewController)
