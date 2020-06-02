@@ -16,6 +16,7 @@
 		523041DC248421BE00056174 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 523041DB248421BE00056174 /* .gitignore */; };
 		523041DE24842F0C00056174 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523041DD24842F0C00056174 /* MainTabBarController.swift */; };
 		523041E02484334200056174 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523041DF2484334200056174 /* SearchViewController.swift */; };
+		921BC5A2CFACD4D46FC702B3 /* Pods_MySImpleMusicPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF68F67D2F3249DA8626863C /* Pods_MySImpleMusicPlayer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,9 @@
 		523041DB248421BE00056174 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		523041DD24842F0C00056174 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		523041DF2484334200056174 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		6DE0590AB52F4E61DF5A3049 /* Pods-MySImpleMusicPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySImpleMusicPlayer.release.xcconfig"; path = "Target Support Files/Pods-MySImpleMusicPlayer/Pods-MySImpleMusicPlayer.release.xcconfig"; sourceTree = "<group>"; };
+		AF68F67D2F3249DA8626863C /* Pods_MySImpleMusicPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MySImpleMusicPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEC1FEB2D82775FBBDF6B533 /* Pods-MySImpleMusicPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySImpleMusicPlayer.debug.xcconfig"; path = "Target Support Files/Pods-MySImpleMusicPlayer/Pods-MySImpleMusicPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				921BC5A2CFACD4D46FC702B3 /* Pods_MySImpleMusicPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +56,8 @@
 				523041BF2484145500056174 /* Products */,
 				523041DA24841D3C00056174 /* README.md */,
 				523041DB248421BE00056174 /* .gitignore */,
+				531B12E26E71285722525A32 /* Pods */,
+				9DE5F23A32DD790821E53905 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,6 +85,24 @@
 			path = MySImpleMusicPlayer;
 			sourceTree = "<group>";
 		};
+		531B12E26E71285722525A32 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CEC1FEB2D82775FBBDF6B533 /* Pods-MySImpleMusicPlayer.debug.xcconfig */,
+				6DE0590AB52F4E61DF5A3049 /* Pods-MySImpleMusicPlayer.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9DE5F23A32DD790821E53905 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF68F67D2F3249DA8626863C /* Pods_MySImpleMusicPlayer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -85,9 +110,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 523041D22484145700056174 /* Build configuration list for PBXNativeTarget "MySImpleMusicPlayer" */;
 			buildPhases = (
+				0C77A113160CBB23A0A5E878 /* [CP] Check Pods Manifest.lock */,
 				523041BA2484145500056174 /* Sources */,
 				523041BB2484145500056174 /* Frameworks */,
 				523041BC2484145500056174 /* Resources */,
+				AA3E44389603DBCCCF685420 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -144,6 +171,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0C77A113160CBB23A0A5E878 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MySImpleMusicPlayer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA3E44389603DBCCCF685420 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MySImpleMusicPlayer/Pods-MySImpleMusicPlayer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MySImpleMusicPlayer/Pods-MySImpleMusicPlayer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MySImpleMusicPlayer/Pods-MySImpleMusicPlayer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		523041BA2484145500056174 /* Sources */ = {
@@ -296,6 +365,7 @@
 		};
 		523041D32484145700056174 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEC1FEB2D82775FBBDF6B533 /* Pods-MySImpleMusicPlayer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -314,6 +384,7 @@
 		};
 		523041D42484145700056174 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DE0590AB52F4E61DF5A3049 /* Pods-MySImpleMusicPlayer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
