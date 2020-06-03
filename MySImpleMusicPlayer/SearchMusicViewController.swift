@@ -17,7 +17,7 @@ struct TrackModel {
 
 private let reuseIdentifier = "SearchCell"
 
-class SearchViewController: UITableViewController {
+class SearchMusicViewController: UITableViewController {
     
     // MARK: - Properties
     
@@ -65,7 +65,7 @@ class SearchViewController: UITableViewController {
 
 // MARK: - UISearchBarDelegate
 
-extension SearchViewController: UISearchBarDelegate {
+extension SearchMusicViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         // print("DEBUG: \(searchText)")
