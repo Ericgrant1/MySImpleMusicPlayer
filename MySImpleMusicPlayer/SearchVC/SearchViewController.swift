@@ -30,7 +30,9 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setup()
         setupSearchBar()
+        setupTableView()
     }
     
     // MARK: - Setup
@@ -59,6 +61,10 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
     private func setupSearchBar() {
         navigationItem.searchController = searchController
         searchController.searchBar.delegate = self
+    }
+    
+    private func setupTableView() {
+        table.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
     }
     
 }
