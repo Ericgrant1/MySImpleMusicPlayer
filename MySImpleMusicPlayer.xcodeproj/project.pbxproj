@@ -24,7 +24,7 @@
 		52ED13962487DB38005576AB /* SearchModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ED138F2487DB38005576AB /* SearchModels.swift */; };
 		52ED13972487DB38005576AB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ED13902487DB38005576AB /* SearchViewController.swift */; };
 		52ED13982487DB38005576AB /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ED13912487DB38005576AB /* SearchInteractor.swift */; };
-		52ED13992487DB38005576AB /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52ED13922487DB38005576AB /* SearchViewController.xib */; };
+		52ED139B2487E7A1005576AB /* SearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52ED139A2487E7A1005576AB /* SearchViewController.storyboard */; };
 		921BC5A2CFACD4D46FC702B3 /* Pods_MySImpleMusicPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF68F67D2F3249DA8626863C /* Pods_MySImpleMusicPlayer.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,7 +49,7 @@
 		52ED138F2487DB38005576AB /* SearchModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModels.swift; sourceTree = "<group>"; };
 		52ED13902487DB38005576AB /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		52ED13912487DB38005576AB /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
-		52ED13922487DB38005576AB /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		52ED139A2487E7A1005576AB /* SearchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchViewController.storyboard; sourceTree = "<group>"; };
 		6DE0590AB52F4E61DF5A3049 /* Pods-MySImpleMusicPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySImpleMusicPlayer.release.xcconfig"; path = "Target Support Files/Pods-MySImpleMusicPlayer/Pods-MySImpleMusicPlayer.release.xcconfig"; sourceTree = "<group>"; };
 		AF68F67D2F3249DA8626863C /* Pods_MySImpleMusicPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MySImpleMusicPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC1FEB2D82775FBBDF6B533 /* Pods-MySImpleMusicPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySImpleMusicPlayer.debug.xcconfig"; path = "Target Support Files/Pods-MySImpleMusicPlayer/Pods-MySImpleMusicPlayer.debug.xcconfig"; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 		52ED137C2487D889005576AB /* SearchVC */ = {
 			isa = PBXGroup;
 			children = (
-				52ED13922487DB38005576AB /* SearchViewController.xib */,
+				52ED139A2487E7A1005576AB /* SearchViewController.storyboard */,
 				52ED13902487DB38005576AB /* SearchViewController.swift */,
 				52ED13912487DB38005576AB /* SearchInteractor.swift */,
 				52ED138C2487DB38005576AB /* SearchPresenter.swift */,
@@ -208,8 +208,8 @@
 				523041DC248421BE00056174 /* .gitignore in Resources */,
 				523041CE2484145700056174 /* LaunchScreen.storyboard in Resources */,
 				523041CB2484145700056174 /* Assets.xcassets in Resources */,
-				52ED13992487DB38005576AB /* SearchViewController.xib in Resources */,
 				523041C92484145500056174 /* Main.storyboard in Resources */,
+				52ED139B2487E7A1005576AB /* SearchViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
