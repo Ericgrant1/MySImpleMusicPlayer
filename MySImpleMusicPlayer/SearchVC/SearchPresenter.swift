@@ -17,6 +17,14 @@ class SearchPresenter: SearchPresentationLogic {
     
     func presentData(response: Search.Model.Response.ResponseType) {
         
+        switch response {
+            
+        case .some:
+            print("DEBUG: presenter .some")
+        case .presentTracks:
+            print("DEBUG: presenter .presentTracks")
+            viewController?.displayData(viewModel: Search.Model.ViewModel.ViewModelData.displayTracks)
+        }
     }
     
 }

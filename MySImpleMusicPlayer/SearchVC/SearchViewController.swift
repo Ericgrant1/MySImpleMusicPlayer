@@ -54,10 +54,6 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
     
     // MARK: - Helper Functions
     
-    func displayData(viewModel: Search.Model.ViewModel.ViewModelData) {
-        
-    }
-    
     private func setupSearchBar() {
         navigationItem.searchController = searchController
         searchController.searchBar.delegate = self
@@ -67,11 +63,22 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
         table.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
     }
     
+    func displayData(viewModel: Search.Model.ViewModel.ViewModelData) {
+        
+        switch viewModel {
+        
+        case .some:
+            print("DEBUG: viewController .some")
+        case .displayTracks:
+            print("DEBUG: viewController .displayTracks")
+        }
+    }
 }
 
 // MARK: - UITableViewDelegate/DataSource
 
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
@@ -87,5 +94,6 @@ extension SearchViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print("DEBUG: Some text: \(searchText)")
+        interactor?.makeRequest(request: Search.Model.Request.RequestType.some)
     }
 }
