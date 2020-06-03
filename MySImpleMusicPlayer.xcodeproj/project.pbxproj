@@ -17,6 +17,7 @@
 		523041DE24842F0C00056174 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523041DD24842F0C00056174 /* MainTabBarController.swift */; };
 		523041E02484334200056174 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523041DF2484334200056174 /* SearchViewController.swift */; };
 		52ED137924879992005576AB /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ED137824879992005576AB /* SearchResponse.swift */; };
+		52ED137B2487B350005576AB /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ED137A2487B350005576AB /* NetworkService.swift */; };
 		921BC5A2CFACD4D46FC702B3 /* Pods_MySImpleMusicPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF68F67D2F3249DA8626863C /* Pods_MySImpleMusicPlayer.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		523041DD24842F0C00056174 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		523041DF2484334200056174 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		52ED137824879992005576AB /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
+		52ED137A2487B350005576AB /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		6DE0590AB52F4E61DF5A3049 /* Pods-MySImpleMusicPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySImpleMusicPlayer.release.xcconfig"; path = "Target Support Files/Pods-MySImpleMusicPlayer/Pods-MySImpleMusicPlayer.release.xcconfig"; sourceTree = "<group>"; };
 		AF68F67D2F3249DA8626863C /* Pods_MySImpleMusicPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MySImpleMusicPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC1FEB2D82775FBBDF6B533 /* Pods-MySImpleMusicPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySImpleMusicPlayer.debug.xcconfig"; path = "Target Support Files/Pods-MySImpleMusicPlayer/Pods-MySImpleMusicPlayer.debug.xcconfig"; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				523041C52484145500056174 /* ViewController.swift */,
 				523041DD24842F0C00056174 /* MainTabBarController.swift */,
 				523041DF2484334200056174 /* SearchViewController.swift */,
+				52ED137A2487B350005576AB /* NetworkService.swift */,
 				52ED137824879992005576AB /* SearchResponse.swift */,
 				523041C72484145500056174 /* Main.storyboard */,
 				523041CA2484145700056174 /* Assets.xcassets */,
@@ -227,6 +230,7 @@
 				523041C22484145500056174 /* AppDelegate.swift in Sources */,
 				523041DE24842F0C00056174 /* MainTabBarController.swift in Sources */,
 				523041C42484145500056174 /* SceneDelegate.swift in Sources */,
+				52ED137B2487B350005576AB /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
