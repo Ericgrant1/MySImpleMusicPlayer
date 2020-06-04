@@ -11,11 +11,18 @@ import UIKit
 
 class TrackCell: UITableViewCell {
     
+    // MARK: - Properties
+    
     static let reuseIdentifier = "TrackCell"
     
+    @IBOutlet weak var trackNameLabel: UILabel!
+    @IBOutlet weak var artistNameLabel: UILabel!
+    @IBOutlet weak var collectionNameLabel: UILabel!
     @IBOutlet weak var trackImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+    
+    
 }

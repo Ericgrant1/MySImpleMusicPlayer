@@ -37,6 +37,7 @@ class SearchPresenter: SearchPresentationLogic {
         return SearchViewModel.Cell.init(iconUrlString: track.artworkUrl100,
                                          trackName: track.trackName,
                                          collection: track.collectionName ?? "",
-                                         artistName: track.artistName)
+                                         artistName: track.artistName,
+                                         previewUrl: track.previewUrl)
     }
 }

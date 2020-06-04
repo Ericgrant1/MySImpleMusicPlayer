@@ -38,6 +38,7 @@ struct SearchViewModel {
         var trackName: String
         var collection: String
         var artistName: String
+        var previewUrl: String?
     }
     
     let cells: [Cell]

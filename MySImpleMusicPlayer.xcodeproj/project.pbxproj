@@ -103,7 +103,6 @@
 				52ED138B2487DA2A005576AB /* Servicies */,
 				52ED137C2487D889005576AB /* SearchVC */,
 				523041DF2484334200056174 /* SearchMusicViewController.swift */,
-				52ED137824879992005576AB /* SearchResponse.swift */,
 				52ED139E2487FA28005576AB /* Helpers */,
 				523041C72484145500056174 /* Main.storyboard */,
 				523041CA2484145700056174 /* Assets.xcassets */,
@@ -120,6 +119,14 @@
 				52A48B2D248922A900CD4579 /* TrackCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		52A48B2F2489329500CD4579 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				52ED137824879992005576AB /* SearchResponse.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		52ED137C2487D889005576AB /* SearchVC */ = {
@@ -140,6 +147,7 @@
 		52ED138B2487DA2A005576AB /* Servicies */ = {
 			isa = PBXGroup;
 			children = (
+				52A48B2F2489329500CD4579 /* Models */,
 				52ED137A2487B350005576AB /* NetworkService.swift */,
 			);
 			path = Servicies;
