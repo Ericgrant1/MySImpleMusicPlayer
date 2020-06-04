@@ -8,5 +8,6 @@ target 'MySImpleMusicPlayer' do
   # Pods for MySImpleMusicPlayer
 
 	pod 'Alamofire', '~> 5.2'
+	pod 'SDWebImage', '~> 5.0'
 
 end
