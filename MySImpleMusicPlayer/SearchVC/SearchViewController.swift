@@ -66,6 +66,9 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
     
     private func setupTableView() {
         table.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
+        
+        let nib = UINib(nibName: "TrackCell", bundle: nil)
+        table.register(nib, forCellReuseIdentifier: TrackCell.reuseIdentifier)
     }
     
     func displayData(viewModel: Search.Model.ViewModel.ViewModelData) {
@@ -91,14 +94,18 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: TrackCell.reuseIdentifier, for: indexPath) as! TrackCell
         
         let cellViewModel = searchViewModel.cells[indexPath.row]
-        cell.textLabel?.text = "\(cellViewModel.trackName)\n\(cellViewModel.artistName)"
-        cell.textLabel?.numberOfLines = 2
-        cell.imageView?.image = #imageLiteral(resourceName: "ely_mountain")
-        
+        cell.trackImageView.backgroundColor = .red
+//        cell.textLabel?.text = "\(cellViewModel.trackName)\n\(cellViewModel.artistName)"
+//        cell.textLabel?.numberOfLines = 2
+//        cell.imageView?.image = #imageLiteral(resourceName: "ely_mountain")
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 84
     }
 }
 
