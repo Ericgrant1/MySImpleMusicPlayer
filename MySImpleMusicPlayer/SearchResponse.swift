@@ -12,6 +12,7 @@ struct SearchResponse: Decodable {
     var resultCount: Int
     var results: [Track]
 }
+
 struct Track: Decodable {
     var trackName: String
     var collectionName: String?
