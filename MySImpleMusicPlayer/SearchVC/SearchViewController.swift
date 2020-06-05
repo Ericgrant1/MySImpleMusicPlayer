@@ -28,6 +28,8 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
     
     @IBOutlet weak var table: UITableView!
     
+    private lazy var footerView = FooterView()
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -69,19 +71,20 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
         
         let nib = UINib(nibName: "TrackCell", bundle: nil)
         table.register(nib, forCellReuseIdentifier: TrackCell.reuseIdentifier)
-        table.tableFooterView = UIView()
+        table.tableFooterView = footerView
     }
     
     func displayData(viewModel: Search.Model.ViewModel.ViewModelData) {
         
         switch viewModel {
-        
-        case .some:
-            print("DEBUG: viewController .some")
+
         case .displayTracks(let searchViewModel):
             print("DEBUG: viewController .displayTracks")
             self.searchViewModel = searchViewModel
             table.reloadData()
+            footerView.hideLoader()
+        case .displayFooterView:
+            footerView.showLoader()
         }
     }
 }
@@ -98,7 +101,6 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: TrackCell.reuseIdentifier, for: indexPath) as! TrackCell
         
         let cellViewModel = searchViewModel.cells[indexPath.row]
-        print("DEBUG: \(cellViewModel.previewUrl)")
         cell.trackImageView.backgroundColor = .red
         cell.set(viewModel: cellViewModel)
 
