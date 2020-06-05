@@ -112,11 +112,8 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         print("DEBUG: Track name - \(cellViewModel.trackName)")
         guard let window = UIApplication.shared.windows.first(where: { $0.isKeyWindow }) else { return }
         let trackDetailView = Bundle.main.loadNibNamed("TrackDetailView", owner: self, options: nil)?.first as! TrackDetailView
+        trackDetailView.set(viewModel: cellViewModel)
         window.addSubview(trackDetailView)
-        
-
-        self.dismiss(animated: true, completion: nil)
-    
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
