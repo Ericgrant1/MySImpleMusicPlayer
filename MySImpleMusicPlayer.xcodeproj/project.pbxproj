@@ -19,6 +19,8 @@
 		52A48B2C2489225F00CD4579 /* TrackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A48B2B2489225F00CD4579 /* TrackCell.xib */; };
 		52A48B2E248922A900CD4579 /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A48B2D248922A900CD4579 /* TrackCell.swift */; };
 		52A48B32248A36C800CD4579 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A48B31248A36C800CD4579 /* FooterView.swift */; };
+		52A48B35248A52C100CD4579 /* TrackDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A48B34248A52C100CD4579 /* TrackDetailView.xib */; };
+		52A48B37248A52E400CD4579 /* TrackDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A48B36248A52E400CD4579 /* TrackDetailView.swift */; };
 		52ED137924879992005576AB /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ED137824879992005576AB /* SearchResponse.swift */; };
 		52ED137B2487B350005576AB /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ED137A2487B350005576AB /* NetworkService.swift */; };
 		52ED13932487DB38005576AB /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ED138C2487DB38005576AB /* SearchPresenter.swift */; };
@@ -48,6 +50,8 @@
 		52A48B2B2489225F00CD4579 /* TrackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackCell.xib; sourceTree = "<group>"; };
 		52A48B2D248922A900CD4579 /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
 		52A48B31248A36C800CD4579 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
+		52A48B34248A52C100CD4579 /* TrackDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackDetailView.xib; sourceTree = "<group>"; };
+		52A48B36248A52E400CD4579 /* TrackDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailView.swift; sourceTree = "<group>"; };
 		52ED137824879992005576AB /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		52ED137A2487B350005576AB /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		52ED138C2487DB38005576AB /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
@@ -139,9 +143,19 @@
 			path = FooterView;
 			sourceTree = "<group>";
 		};
+		52A48B33248A527500CD4579 /* TrackDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				52A48B34248A52C100CD4579 /* TrackDetailView.xib */,
+				52A48B36248A52E400CD4579 /* TrackDetailView.swift */,
+			);
+			path = TrackDetailView;
+			sourceTree = "<group>";
+		};
 		52ED137C2487D889005576AB /* SearchVC */ = {
 			isa = PBXGroup;
 			children = (
+				52A48B33248A527500CD4579 /* TrackDetailView */,
 				52A48B30248A36A300CD4579 /* FooterView */,
 				52A48B2A2489221A00CD4579 /* Cell */,
 				52ED139A2487E7A1005576AB /* SearchViewController.storyboard */,
@@ -249,6 +263,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52A48B35248A52C100CD4579 /* TrackDetailView.xib in Resources */,
 				523041DC248421BE00056174 /* .gitignore in Resources */,
 				523041CE2484145700056174 /* LaunchScreen.storyboard in Resources */,
 				523041CB2484145700056174 /* Assets.xcassets in Resources */,
@@ -322,6 +337,7 @@
 				52ED13962487DB38005576AB /* SearchModels.swift in Sources */,
 				523041C42484145500056174 /* SceneDelegate.swift in Sources */,
 				52ED13932487DB38005576AB /* SearchPresenter.swift in Sources */,
+				52A48B37248A52E400CD4579 /* TrackDetailView.swift in Sources */,
 				52ED137B2487B350005576AB /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
