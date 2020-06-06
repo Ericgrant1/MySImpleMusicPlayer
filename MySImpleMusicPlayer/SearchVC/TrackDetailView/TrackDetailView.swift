@@ -57,6 +57,7 @@ class TrackDetailView: UIView {
         player.seek(to: seekTime)
     }
     @IBAction func handleVolumeSlider(_ sender: Any) {
+        player.volume = volumeSlider.value
     }
     @IBAction func previousTrack(_ sender: Any) {
     }
