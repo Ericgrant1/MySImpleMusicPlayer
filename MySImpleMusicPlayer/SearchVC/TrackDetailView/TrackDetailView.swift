@@ -74,6 +74,7 @@ class TrackDetailView: UIView {
         trackTitleLabel.text = viewModel.trackName
         authorTitleLabel.text = viewModel.artistName
         playTrack(previewUrl: viewModel.previewUrl)
+        monitorStarTime()
         
         let string600 = viewModel.iconUrlString?.replacingOccurrences(of: "100x100", with: "600x600")
         guard let url = URL(string: string600 ?? "") else { return }
@@ -87,6 +88,16 @@ class TrackDetailView: UIView {
         let playerItem = AVPlayerItem(url: url)
         player.replaceCurrentItem(with: playerItem)
         player.play()
+    }
+    
+    // MARK: - Time setup
+    
+    private func monitorStarTime() {
+        let time = CMTimeMake(value: 1, timescale: 3)
+        let times = [NSValue(time: time)]
+        player.addBoundaryTimeObserver(forTimes: times, queue: .main) {
+            self.enlargeTrackImageView()
+        }
     }
     
     // MARK: - Animations
