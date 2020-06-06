@@ -95,8 +95,8 @@ class TrackDetailView: UIView {
     private func monitorStarTime() {
         let time = CMTimeMake(value: 1, timescale: 3)
         let times = [NSValue(time: time)]
-        player.addBoundaryTimeObserver(forTimes: times, queue: .main) {
-            self.enlargeTrackImageView()
+        player.addBoundaryTimeObserver(forTimes: times, queue: .main) { [weak self] in
+            self?.enlargeTrackImageView()
         }
     }
     
