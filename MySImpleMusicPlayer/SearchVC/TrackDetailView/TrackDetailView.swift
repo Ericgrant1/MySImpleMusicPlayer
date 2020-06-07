@@ -27,6 +27,7 @@ class TrackDetailView: UIView {
     }()
     
     weak var delegate: TrackMovingDelegate?
+    weak var tabBarDelegate: MainTabBarControllerDelegate?
     
     @IBOutlet weak var trackImageView: UIImageView!
     @IBOutlet weak var currentTimeSlider: UISlider!
@@ -51,7 +52,8 @@ class TrackDetailView: UIView {
     // MARK: - IBActions
     
     @IBAction func dragDownButtonTapped(_ sender: Any) {
-        self.removeFromSuperview()
+        self.tabBarDelegate?.minimizedTrackDetailController()
+//        self.removeFromSuperview()
     }
     
     @IBAction func handleCurrentTimeSlider(_ sender: Any) {
