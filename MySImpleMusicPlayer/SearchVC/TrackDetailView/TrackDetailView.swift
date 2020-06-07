@@ -11,6 +11,11 @@ import UIKit
 import SDWebImage
 import AVKit
 
+protocol TrackMovingDelegate: class {
+    func moveBackwarForPreviousTrack() -> SearchViewModel.Cell?
+    func moveForwardForPreviousTrack() -> SearchViewModel.Cell?
+}
+
 class TrackDetailView: UIView {
     
     // MARK: - Properties
@@ -20,6 +25,8 @@ class TrackDetailView: UIView {
         avPlayer.automaticallyWaitsToMinimizeStalling = false
         return avPlayer
     }()
+    
+    weak var delegate: TrackMovingDelegate?
     
     @IBOutlet weak var trackImageView: UIImageView!
     @IBOutlet weak var currentTimeSlider: UISlider!
@@ -44,11 +51,10 @@ class TrackDetailView: UIView {
     // MARK: - IBActions
     
     @IBAction func dragDownButtonTapped(_ sender: Any) {
-        
         self.removeFromSuperview()
     }
+    
     @IBAction func handleCurrentTimeSlider(_ sender: Any) {
-        
         let percentage = currentTimeSlider.value
         guard let duration = player.currentItem?.duration else { return }
         let durationInSeconds = CMTimeGetSeconds(duration)
@@ -56,15 +62,24 @@ class TrackDetailView: UIView {
         let seekTime = CMTimeMakeWithSeconds(seekTimeInSeconds, preferredTimescale: 1)
         player.seek(to: seekTime)
     }
+    
     @IBAction func handleVolumeSlider(_ sender: Any) {
         player.volume = volumeSlider.value
     }
+    
     @IBAction func previousTrack(_ sender: Any) {
+        let cellVideoModel = delegate?.moveBackwarForPreviousTrack()
+        guard let cellInfo = cellVideoModel else { return }
+        self.set(viewModel: cellInfo)
     }
+    
     @IBAction func nextTrack(_ sender: Any) {
+        let cellVideoModel = delegate?.moveForwardForPreviousTrack()
+        guard let cellInfo = cellVideoModel else { return }
+        self.set(viewModel: cellInfo)
     }
+    
     @IBAction func playPauseAction(_ sender: Any) {
-        
         if player.timeControlStatus == .paused {
             player.play()
             playPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
