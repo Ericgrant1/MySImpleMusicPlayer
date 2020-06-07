@@ -13,6 +13,9 @@ class MainTabBarController: UITabBarController {
     
     // MARK: - Properties
     
+    private var minimizedTopAnchorConstraint: NSLayoutConstraint!
+    private var maximizedTopAnchorConstraint: NSLayoutConstraint!
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -21,6 +24,8 @@ class MainTabBarController: UITabBarController {
         view.backgroundColor = .white
         
         tabBar.tintColor = #colorLiteral(red: 1, green: 0, blue: 0.3764705882, alpha: 1)
+        
+        setupTrackDetailView()
         
         let searchVC: SearchViewController = SearchViewController.loadFromStoryboard()
         viewControllers = [
@@ -41,5 +46,25 @@ class MainTabBarController: UITabBarController {
         navigationVC.navigationBar.prefersLargeTitles = true
         
         return navigationVC
+    }
+    
+    private func setupTrackDetailView() {
+        print("DEBUG: Configure Track Detail View")
+        
+        let trackDetailView: TrackDetailView = TrackDetailView.loadFromNib()
+        trackDetailView.backgroundColor = .yellow
+        
+        view.insertSubview(trackDetailView, belowSubview: tabBar)
+        
+        trackDetailView.translatesAutoresizingMaskIntoConstraints = false
+        minimizedTopAnchorConstraint = trackDetailView.topAnchor.constraint(equalTo: tabBar.topAnchor, constant: -64)
+        maximizedTopAnchorConstraint = trackDetailView.topAnchor.constraint(equalTo: view.topAnchor)
+        
+        maximizedTopAnchorConstraint.isActive = true
+        trackDetailView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        trackDetailView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        trackDetailView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        
+//        view.addSubview(trackDetailView)
     }
 }
