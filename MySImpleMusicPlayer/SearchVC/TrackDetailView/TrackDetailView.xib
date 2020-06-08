@@ -13,6 +13,68 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yir-Ba-mFp">
+                    <rect key="frame" x="0.0" y="44" width="414" height="64"/>
+                    <subviews>
+                        <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ktp-mo-ild">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1"/>
+                            <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="7Ec-jH-1wS"/>
+                            </constraints>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="7m6-wb-rqa">
+                            <rect key="frame" x="8" y="8" width="398" height="48"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ely_mountain" translatesAutoresizingMaskIntoConstraints="NO" id="MX9-AO-6YB">
+                                    <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="48" id="Uzw-fR-jtX"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y2y-e8-x8t">
+                                    <rect key="frame" x="64" y="0.0" width="210" height="48"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BY4-ag-XGt">
+                                    <rect key="frame" x="290" y="0.0" width="44" height="48"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="44" id="HFJ-QD-dzp"/>
+                                    </constraints>
+                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <state key="normal" image="pause"/>
+                                    <connections>
+                                        <action selector="playPauseAction:" destination="Koh-mj-Rac" eventType="touchUpInside" id="ZRN-53-Mzd"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ifc-fT-eUr">
+                                    <rect key="frame" x="350" y="0.0" width="48" height="48"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="48" id="OtH-8H-Be8"/>
+                                    </constraints>
+                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <state key="normal" image="Right"/>
+                                    <connections>
+                                        <action selector="nextTrack:" destination="Koh-mj-Rac" eventType="touchUpInside" id="FU7-N2-Ftw"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="Ktp-mo-ild" secondAttribute="trailing" id="3lS-Nq-Ept"/>
+                        <constraint firstAttribute="trailing" secondItem="7m6-wb-rqa" secondAttribute="trailing" constant="8" id="Ggx-gX-kEj"/>
+                        <constraint firstAttribute="height" constant="64" id="JKK-Gn-gcA"/>
+                        <constraint firstItem="Ktp-mo-ild" firstAttribute="top" secondItem="yir-Ba-mFp" secondAttribute="top" id="Msg-Hh-4n8"/>
+                        <constraint firstAttribute="bottom" secondItem="7m6-wb-rqa" secondAttribute="bottom" constant="8" id="RA3-Gv-HTY"/>
+                        <constraint firstItem="7m6-wb-rqa" firstAttribute="leading" secondItem="yir-Ba-mFp" secondAttribute="leading" constant="8" id="YlO-v3-c33"/>
+                        <constraint firstItem="Ktp-mo-ild" firstAttribute="leading" secondItem="yir-Ba-mFp" secondAttribute="leading" id="ZWB-X9-fxp"/>
+                        <constraint firstItem="7m6-wb-rqa" firstAttribute="top" secondItem="yir-Ba-mFp" secondAttribute="top" constant="8" id="fig-fp-eSa"/>
+                    </constraints>
+                </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dHR-pV-6Ud">
                     <rect key="frame" x="30" y="44" width="354" height="788"/>
                     <subviews>
@@ -139,7 +201,10 @@
                 <constraint firstItem="dHR-pV-6Ud" firstAttribute="leading" secondItem="NA8-9I-7Gl" secondAttribute="leading" constant="30" id="1VU-iP-XxN"/>
                 <constraint firstItem="NA8-9I-7Gl" firstAttribute="bottom" secondItem="dHR-pV-6Ud" secondAttribute="bottom" constant="30" id="53e-TP-lgk"/>
                 <constraint firstItem="dHR-pV-6Ud" firstAttribute="top" secondItem="NA8-9I-7Gl" secondAttribute="top" id="9Vd-lh-VLg"/>
+                <constraint firstItem="yir-Ba-mFp" firstAttribute="leading" secondItem="NA8-9I-7Gl" secondAttribute="leading" id="R7s-eX-Ovb"/>
+                <constraint firstItem="NA8-9I-7Gl" firstAttribute="trailing" secondItem="yir-Ba-mFp" secondAttribute="trailing" id="YBR-in-Ju1"/>
                 <constraint firstItem="NA8-9I-7Gl" firstAttribute="trailing" secondItem="dHR-pV-6Ud" secondAttribute="trailing" constant="30" id="fHA-i7-0xf"/>
+                <constraint firstItem="yir-Ba-mFp" firstAttribute="top" secondItem="NA8-9I-7Gl" secondAttribute="top" id="rI2-At-ZAi"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="NA8-9I-7Gl"/>
             <connections>
@@ -147,6 +212,12 @@
                 <outlet property="currentTimeLabel" destination="kOj-Af-sc7" id="G45-Xu-0Rb"/>
                 <outlet property="currentTimeSlider" destination="DQ8-42-lap" id="SFk-Oy-Lbs"/>
                 <outlet property="durationLabel" destination="dYI-Wj-iqw" id="tXY-eG-Upr"/>
+                <outlet property="maximizedStackView" destination="dHR-pV-6Ud" id="kg6-Xs-58c"/>
+                <outlet property="miniForwardButton" destination="Ifc-fT-eUr" id="ZuG-f5-7vC"/>
+                <outlet property="miniPlayPauseButton" destination="BY4-ag-XGt" id="0zQ-4N-oUU"/>
+                <outlet property="miniTrackImageView" destination="MX9-AO-6YB" id="85z-th-mXd"/>
+                <outlet property="miniTrackTitleLabel" destination="y2y-e8-x8t" id="c7s-Ba-y9z"/>
+                <outlet property="miniTrackView" destination="yir-Ba-mFp" id="kwN-9g-p09"/>
                 <outlet property="playPauseButton" destination="i7O-3a-zsN" id="wJs-VQ-DFc"/>
                 <outlet property="trackImageView" destination="Dcu-H4-hzm" id="xKy-Gb-WXV"/>
                 <outlet property="trackTitleLabel" destination="A1p-DH-lis" id="T6q-BV-an0"/>
@@ -161,6 +232,7 @@
         <image name="IconMin" width="7" height="12"/>
         <image name="Left" width="34" height="20"/>
         <image name="Right" width="34" height="20"/>
+        <image name="ely_mountain" width="50" height="50"/>
         <image name="pause" width="57" height="57"/>
     </resources>
 </document>
