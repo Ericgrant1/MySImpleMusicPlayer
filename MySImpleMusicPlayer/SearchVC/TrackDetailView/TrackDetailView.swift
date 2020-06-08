@@ -55,6 +55,15 @@ class TrackDetailView: UIView {
         trackImageView.layer.cornerRadius = 5
         
         miniPlayPauseButton.imageEdgeInsets = .init(top: 11, left: 11, bottom: 11, right: 11)
+        
+        setupGestures()
+    }
+    
+    // MARK: - Selectors
+    
+    @objc func handleTapMaximized() {
+        print("DEBUG: Tapping to maximized..")
+        self.tabBarDelegate?.maximazedTrackDetailController(viewModel: nil)
     }
     
     // MARK: - IBActions
@@ -119,6 +128,10 @@ class TrackDetailView: UIView {
         guard let url = URL(string: string600 ?? "") else { return }
         miniTrackImageView.sd_setImage(with: url, completed: nil)
         trackImageView.sd_setImage(with: url, completed: nil)
+    }
+    
+    private func setupGestures() {
+        miniTrackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTapMaximized)))
     }
     
     private func playTrack(previewUrl: String?) {
