@@ -53,6 +53,8 @@ class TrackDetailView: UIView {
         let scale: CGFloat = 0.8
         trackImageView.transform = CGAffineTransform(scaleX: scale, y: scale)
         trackImageView.layer.cornerRadius = 5
+        
+        miniPlayPauseButton.imageEdgeInsets = .init(top: 11, left: 11, bottom: 11, right: 11)
     }
     
     // MARK: - IBActions
