@@ -41,10 +41,12 @@ class MainTabBarController: UITabBarController {
         
         let library = Library()
         let hostVC = UIHostingController(rootView: library)
+        hostVC.tabBarItem.image = #imageLiteral(resourceName: "ios10-apple-music-library-5nav-icon")
+        hostVC.tabBarItem.title = "Library"
         
         viewControllers = [
-            generateViewController(rooviewController: searchVC, image: #imageLiteral(resourceName: "ios10-apple-music-search-5nav-icon"), title: "Search"),
-            generateViewController(rooviewController: hostVC, image: #imageLiteral(resourceName: "ios10-apple-music-library-5nav-icon"), title: "Library")
+            hostVC,
+            generateViewController(rooviewController: searchVC, image: #imageLiteral(resourceName: "ios10-apple-music-search-5nav-icon"), title: "Search")
         ]
     }
     
