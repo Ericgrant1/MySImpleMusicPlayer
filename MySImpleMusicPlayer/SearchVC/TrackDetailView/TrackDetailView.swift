@@ -79,6 +79,17 @@ class TrackDetailView: UIView {
         }
     }
     
+    @objc func handleDismissalPan(gesture: UIPanGestureRecognizer) {
+        switch gesture.state {
+        case .changed:
+            handleDismissalPanChanged(gesture: gesture)
+        case .ended:
+            handleDismissalPanEnded(gesture: gesture)
+        @unknown default:
+            print("DEBUG: Unknown default..")
+        }
+    }
+    
     // MARK: - IBActions
     
     @IBAction func dragDownButtonTapped(_ sender: Any) {
@@ -146,6 +157,7 @@ class TrackDetailView: UIView {
     private func setupGestures() {
         miniTrackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTapMaximized)))
         miniTrackView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handlePan)))
+        addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handleDismissalPan)))
     }
     
     private func handlePanChanged(gesture: UIPanGestureRecognizer) {
@@ -173,6 +185,27 @@ class TrackDetailView: UIView {
                         } else {
                             self.miniTrackView.alpha = 1
                             self.maximizedStackView.alpha = 0
+                        }
+        },
+                       completion: nil)
+    }
+    
+    private func handleDismissalPanChanged(gesture: UIPanGestureRecognizer) {
+        let translation = gesture.translation(in: self.superview)
+        maximizedStackView.transform = CGAffineTransform(translationX: 0, y: translation.y)
+    }
+    
+    private func handleDismissalPanEnded(gesture: UIPanGestureRecognizer) {
+        let translation = gesture.translation(in: self.superview)
+        UIView.animate(withDuration: 0.5,
+                       delay: 0,
+                       usingSpringWithDamping: 0.7,
+                       initialSpringVelocity: 1,
+                       options: .curveEaseOut,
+                       animations: {
+                        self.maximizedStackView.transform = .identity
+                        if translation.y > 50 {
+                            self.tabBarDelegate?.minimizedTrackDetailController()
                         }
         },
                        completion: nil)
