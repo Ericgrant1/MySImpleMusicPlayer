@@ -23,6 +23,7 @@
 		52A48B32248A36C800CD4579 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A48B31248A36C800CD4579 /* FooterView.swift */; };
 		52A48B35248A52C100CD4579 /* TrackDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A48B34248A52C100CD4579 /* TrackDetailView.xib */; };
 		52A48B37248A52E400CD4579 /* TrackDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A48B36248A52E400CD4579 /* TrackDetailView.swift */; };
+		52D6CBC8248FFD7800C89474 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D6CBC7248FFD7800C89474 /* Library.swift */; };
 		52ED137924879992005576AB /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ED137824879992005576AB /* SearchResponse.swift */; };
 		52ED137B2487B350005576AB /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ED137A2487B350005576AB /* NetworkService.swift */; };
 		52ED13932487DB38005576AB /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ED138C2487DB38005576AB /* SearchPresenter.swift */; };
@@ -56,6 +57,7 @@
 		52A48B31248A36C800CD4579 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		52A48B34248A52C100CD4579 /* TrackDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackDetailView.xib; sourceTree = "<group>"; };
 		52A48B36248A52E400CD4579 /* TrackDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailView.swift; sourceTree = "<group>"; };
+		52D6CBC7248FFD7800C89474 /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		52ED137824879992005576AB /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		52ED137A2487B350005576AB /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		52ED138C2487DB38005576AB /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				523041C32484145500056174 /* SceneDelegate.swift */,
 				523041C52484145500056174 /* ViewController.swift */,
 				523041DD24842F0C00056174 /* MainTabBarController.swift */,
+				52D6CBC7248FFD7800C89474 /* Library.swift */,
 				52ED138B2487DA2A005576AB /* Servicies */,
 				52ED137C2487D889005576AB /* SearchVC */,
 				523041DF2484334200056174 /* SearchMusicViewController.swift */,
@@ -345,6 +348,7 @@
 				52ED13962487DB38005576AB /* SearchModels.swift in Sources */,
 				523041C42484145500056174 /* SceneDelegate.swift in Sources */,
 				52ED13932487DB38005576AB /* SearchPresenter.swift in Sources */,
+				52D6CBC8248FFD7800C89474 /* Library.swift in Sources */,
 				52A48B37248A52E400CD4579 /* TrackDetailView.swift in Sources */,
 				52ED137B2487B350005576AB /* NetworkService.swift in Sources */,
 			);
