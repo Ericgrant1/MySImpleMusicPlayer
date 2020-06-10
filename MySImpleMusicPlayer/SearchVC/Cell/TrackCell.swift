@@ -49,24 +49,19 @@ class TrackCell: UITableViewCell {
         let defaults = UserDefaults.standard
         guard let cell = cell else { return }
         
-        var listOfTracks = [SearchViewModel.Cell]()
-        if let savedTrack = defaults.object(forKey: "tracks") as? Data {
-            if let decodedTracks = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(savedTrack) as? [SearchViewModel.Cell] {
-                listOfTracks = decodedTracks
-            }
-        }
+        var listOfTracks = defaults.savedTracks()
 
         listOfTracks.append(cell)
         
         if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: listOfTracks, requiringSecureCoding: false) {
             print("DEBUG: Successfully..")
-            defaults.set(savedData, forKey: "tracks")
+            defaults.set(savedData, forKey: UserDefaults.favoriteTrackKey)
         }
     }
     
     @IBAction func showInfoAction(_ sender: Any) {
         let defaults = UserDefaults.standard
-        if let savedTracks = defaults.object(forKey: "tracks") as? Data {
+        if let savedTracks = defaults.object(forKey: UserDefaults.favoriteTrackKey) as? Data {
             if let decodedTracks = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(savedTracks) as? [SearchViewModel.Cell] {
                 decodedTracks.map { (track) in
                     print("DEBUG: Track Name is \(track.trackName)")

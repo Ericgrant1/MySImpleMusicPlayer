@@ -24,6 +24,7 @@
 		52A48B35248A52C100CD4579 /* TrackDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A48B34248A52C100CD4579 /* TrackDetailView.xib */; };
 		52A48B37248A52E400CD4579 /* TrackDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A48B36248A52E400CD4579 /* TrackDetailView.swift */; };
 		52D6CBC8248FFD7800C89474 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D6CBC7248FFD7800C89474 /* Library.swift */; };
+		52D6CBCA24910FDE00C89474 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D6CBC924910FDE00C89474 /* UserDefaults.swift */; };
 		52ED137924879992005576AB /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ED137824879992005576AB /* SearchResponse.swift */; };
 		52ED137B2487B350005576AB /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ED137A2487B350005576AB /* NetworkService.swift */; };
 		52ED13932487DB38005576AB /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ED138C2487DB38005576AB /* SearchPresenter.swift */; };
@@ -58,6 +59,7 @@
 		52A48B34248A52C100CD4579 /* TrackDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackDetailView.xib; sourceTree = "<group>"; };
 		52A48B36248A52E400CD4579 /* TrackDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailView.swift; sourceTree = "<group>"; };
 		52D6CBC7248FFD7800C89474 /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
+		52D6CBC924910FDE00C89474 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		52ED137824879992005576AB /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		52ED137A2487B350005576AB /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		52ED138C2487DB38005576AB /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			children = (
 				52A48B2B2489225F00CD4579 /* TrackCell.xib */,
 				52A48B2D248922A900CD4579 /* TrackCell.swift */,
+				52D6CBC924910FDE00C89474 /* UserDefaults.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				52ED137924879992005576AB /* SearchResponse.swift in Sources */,
 				52ED13982487DB38005576AB /* SearchInteractor.swift in Sources */,
 				52ED139D2487FA0E005576AB /* UIViewControlle&Storyboard.swift in Sources */,
+				52D6CBCA24910FDE00C89474 /* UserDefaults.swift in Sources */,
 				52A48B32248A36C800CD4579 /* FooterView.swift in Sources */,
 				525DDAD1248BA01400275825 /* CMTimeExtension.swift in Sources */,
 				52A48B2E248922A900CD4579 /* TrackCell.swift in Sources */,
