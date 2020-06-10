@@ -45,12 +45,20 @@ class TrackCell: UITableViewCell {
     // MARK: - IBActions
     
     @IBAction func addTrackAction(_ sender: Any) {
-//        print("DEBUG: Add track")
+
         let defaults = UserDefaults.standard
-//        defaults.set(25, forKey: "Age")
-//        defaults.set("Hello", forKey: "String")
+        guard let cell = cell else { return }
         
-        if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: cell, requiringSecureCoding: false) {
+        var listOfTracks = [SearchViewModel.Cell]()
+        if let savedTrack = defaults.object(forKey: "tracks") as? Data {
+            if let decodedTracks = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(savedTrack) as? [SearchViewModel.Cell] {
+                listOfTracks = decodedTracks
+            }
+        }
+
+        listOfTracks.append(cell)
+        
+        if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: listOfTracks, requiringSecureCoding: false) {
             print("DEBUG: Successfully..")
             defaults.set(savedData, forKey: "tracks")
         }
@@ -58,11 +66,14 @@ class TrackCell: UITableViewCell {
     
     @IBAction func showInfoAction(_ sender: Any) {
         let defaults = UserDefaults.standard
-        if let savedTrack = defaults.object(forKey: "tracks") as? Data {
-            if let decodedTrack = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(savedTrack) as? SearchViewModel.Cell {
-                print("DEBUG: Decoded trackName - \(decodedTrack.trackName)")
+        if let savedTracks = defaults.object(forKey: "tracks") as? Data {
+            if let decodedTracks = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(savedTracks) as? [SearchViewModel.Cell] {
+                decodedTracks.map { (track) in
+                    print("DEBUG: Track Name is \(track.trackName)")
+                }
             }
         }
+        
     }
     
     // MARK: - Helper functions
