@@ -40,6 +40,23 @@
                         <color key="textColor" red="0.49411764705882355" green="0.49411764705882355" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9zI-pd-anh">
+                        <rect key="frame" x="374" y="34" width="16" height="16"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <state key="normal" image="Add"/>
+                        <connections>
+                            <action selector="addTrackAction:" destination="8d1-4e-stb" eventType="touchUpInside" id="6XS-aK-jvs"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eU1-nV-jKH">
+                        <rect key="frame" x="301" y="2" width="34" height="30"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal" title="Look"/>
+                        <connections>
+                            <action selector="showInfoAction:" destination="8d1-4e-stb" eventType="touchUpInside" id="cCe-jc-RG2"/>
+                        </connections>
+                    </button>
                 </subviews>
             </tableViewCellContentView>
             <connections>
@@ -51,4 +68,7 @@
             <point key="canvasLocation" x="-139" y="-23"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="Add" width="16" height="16"/>
+    </resources>
 </document>

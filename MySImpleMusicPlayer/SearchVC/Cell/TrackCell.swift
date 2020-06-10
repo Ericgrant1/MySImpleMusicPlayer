@@ -40,6 +40,14 @@ class TrackCell: UITableViewCell {
         trackImageView.image = nil
     }
     
+    @IBAction func addTrackAction(_ sender: Any) {
+        print("DEBUG: Add track")
+    }
+    
+    @IBAction func showInfoAction(_ sender: Any) {
+        print("DEBUG: 222")
+    }
+    
     // MARK: - Helper functions
     
     func set(viewModel: TrackCellViewModel) {
