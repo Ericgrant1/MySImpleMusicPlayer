@@ -12,6 +12,8 @@ import URLImage
 struct Library: View {
     
     @State var tracks = UserDefaults.standard.savedTracks()
+    @State private var showAlert = false
+    @State private var track: SearchViewModel.Cell!
     
     var body: some View {
         NavigationView {
@@ -43,17 +45,36 @@ struct Library: View {
                 
                 List {
                     ForEach(tracks) { track in
-                        LibraryCell(cell: track)
+                        LibraryCell(cell: track).gesture(LongPressGesture().onEnded({ _ in
+                            print("DEBUG: Pressed..")
+                            self.track = track
+                            self.showAlert = true
+                        }))
                     }.onDelete(perform: delete)
                 }
-            }
-                
+            }.actionSheet(isPresented: $showAlert, content: {
+                ActionSheet(title: Text("Are you shure want to delete this Track?"), buttons: [.destructive(Text("Delete"), action: {
+                    print("DEBUG: Delete - \(self.track.trackName)")
+                    self.delete(track: self.track)
+                }), .cancel()
+                ])
+            })
                 .navigationBarTitle("Library")
         }
     }
     
     func delete(at offsets: IndexSet) {
         tracks.remove(atOffsets: offsets)
+        if let saveData = try? NSKeyedArchiver.archivedData(withRootObject: tracks, requiringSecureCoding: false) {
+            let defaults = UserDefaults.standard
+            defaults.set(saveData, forKey: UserDefaults.favoriteTrackKey)
+        }
+    }
+    
+    func delete(track: SearchViewModel.Cell) {
+        let index = tracks.firstIndex(of: track)
+        guard let myIndex = index else { return }
+        tracks.remove(at: myIndex)
         if let saveData = try? NSKeyedArchiver.archivedData(withRootObject: tracks, requiringSecureCoding: false) {
             let defaults = UserDefaults.standard
             defaults.set(saveData, forKey: UserDefaults.favoriteTrackKey)
