@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,6 +25,7 @@
 		52A48B37248A52E400CD4579 /* TrackDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A48B36248A52E400CD4579 /* TrackDetailView.swift */; };
 		52D6CBC8248FFD7800C89474 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D6CBC7248FFD7800C89474 /* Library.swift */; };
 		52D6CBCA24910FDE00C89474 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D6CBC924910FDE00C89474 /* UserDefaults.swift */; };
+		52D6CBCD24913AB700C89474 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 52D6CBCC24913AB700C89474 /* URLImage */; };
 		52ED137924879992005576AB /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ED137824879992005576AB /* SearchResponse.swift */; };
 		52ED137B2487B350005576AB /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ED137A2487B350005576AB /* NetworkService.swift */; };
 		52ED13932487DB38005576AB /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ED138C2487DB38005576AB /* SearchPresenter.swift */; };
@@ -80,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52D6CBCD24913AB700C89474 /* URLImage in Frameworks */,
 				921BC5A2CFACD4D46FC702B3 /* Pods_MySImpleMusicPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -233,6 +235,9 @@
 			dependencies = (
 			);
 			name = MySImpleMusicPlayer;
+			packageProductDependencies = (
+				52D6CBCC24913AB700C89474 /* URLImage */,
+			);
 			productName = MySImpleMusicPlayer;
 			productReference = 523041BE2484145500056174 /* MySImpleMusicPlayer.app */;
 			productType = "com.apple.product-type.application";
@@ -261,6 +266,9 @@
 				Base,
 			);
 			mainGroup = 523041B52484145500056174;
+			packageReferences = (
+				52D6CBCB24913AB700C89474 /* XCRemoteSwiftPackageReference "url-image" */,
+			);
 			productRefGroup = 523041BF2484145500056174 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -554,6 +562,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		52D6CBCB24913AB700C89474 /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.15;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		52D6CBCC24913AB700C89474 /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52D6CBCB24913AB700C89474 /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 523041B62484145500056174 /* Project object */;
 }

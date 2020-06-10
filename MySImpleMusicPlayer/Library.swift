@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import URLImage
 
 struct Library: View {
     
@@ -55,10 +56,7 @@ struct LibraryCell: View {
     
     var body: some View {
         HStack {
-            Image("ely_mountain")
-                .resizable()
-                .frame(width: 60, height: 60)
-                .cornerRadius(2)
+            URLImage(URL(string: cell.iconUrlString ?? "")!).frame(width: 60, height: 60).cornerRadius(2)
             VStack(alignment: .leading) {
                 Text("\(cell.trackName)")
                 Text("\(cell.artistName)")
