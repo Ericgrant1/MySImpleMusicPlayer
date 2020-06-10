@@ -29,6 +29,7 @@ class TrackCell: UITableViewCell {
     @IBOutlet weak var artistNameLabel: UILabel!
     @IBOutlet weak var collectionNameLabel: UILabel!
     @IBOutlet weak var trackImageView: UIImageView!
+    @IBOutlet weak var addTrackOutlet: UIButton!
     
     // MARK: - Lifecycle
     
@@ -48,6 +49,7 @@ class TrackCell: UITableViewCell {
 
         let defaults = UserDefaults.standard
         guard let cell = cell else { return }
+        addTrackOutlet.isHidden = true
         
         var listOfTracks = defaults.savedTracks()
 
@@ -59,22 +61,22 @@ class TrackCell: UITableViewCell {
         }
     }
     
-    @IBAction func showInfoAction(_ sender: Any) {
-        let defaults = UserDefaults.standard
-        if let savedTracks = defaults.object(forKey: UserDefaults.favoriteTrackKey) as? Data {
-            if let decodedTracks = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(savedTracks) as? [SearchViewModel.Cell] {
-                decodedTracks.map { (track) in
-                    print("DEBUG: Track Name is \(track.trackName)")
-                }
-            }
-        }
-        
-    }
-    
     // MARK: - Helper functions
     
     func set(viewModel: SearchViewModel.Cell) {
+        
         self.cell = viewModel
+        
+        let savedTracks = UserDefaults.standard.savedTracks()
+        let availableFavoriteTracks = savedTracks.firstIndex(where: {
+            $0.trackName == self.cell?.trackName && $0.artistName == self.cell?.artistName
+        }) != nil
+        if availableFavoriteTracks {
+            addTrackOutlet.isHidden = true
+        } else {
+            addTrackOutlet.isHidden = false
+        }
+        
         trackNameLabel.text = viewModel.trackName
         artistNameLabel.text = viewModel.artistName
         collectionNameLabel.text = viewModel.collectionName
