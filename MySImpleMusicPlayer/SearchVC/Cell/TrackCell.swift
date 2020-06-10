@@ -23,6 +23,8 @@ class TrackCell: UITableViewCell {
     
     static let reuseIdentifier = "TrackCell"
     
+    var cell: SearchViewModel.Cell?
+    
     @IBOutlet weak var trackNameLabel: UILabel!
     @IBOutlet weak var artistNameLabel: UILabel!
     @IBOutlet weak var collectionNameLabel: UILabel!
@@ -40,17 +42,33 @@ class TrackCell: UITableViewCell {
         trackImageView.image = nil
     }
     
+    // MARK: - IBActions
+    
     @IBAction func addTrackAction(_ sender: Any) {
-        print("DEBUG: Add track")
+//        print("DEBUG: Add track")
+        let defaults = UserDefaults.standard
+//        defaults.set(25, forKey: "Age")
+//        defaults.set("Hello", forKey: "String")
+        
+        if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: cell, requiringSecureCoding: false) {
+            print("DEBUG: Successfully..")
+            defaults.set(savedData, forKey: "tracks")
+        }
     }
     
     @IBAction func showInfoAction(_ sender: Any) {
-        print("DEBUG: 222")
+        let defaults = UserDefaults.standard
+        if let savedTrack = defaults.object(forKey: "tracks") as? Data {
+            if let decodedTrack = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(savedTrack) as? SearchViewModel.Cell {
+                print("DEBUG: Decoded trackName - \(decodedTrack.trackName)")
+            }
+        }
     }
     
     // MARK: - Helper functions
     
-    func set(viewModel: TrackCellViewModel) {
+    func set(viewModel: SearchViewModel.Cell) {
+        self.cell = viewModel
         trackNameLabel.text = viewModel.trackName
         artistNameLabel.text = viewModel.artistName
         collectionNameLabel.text = viewModel.collectionName
