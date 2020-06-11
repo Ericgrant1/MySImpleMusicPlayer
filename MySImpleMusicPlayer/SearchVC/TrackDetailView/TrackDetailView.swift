@@ -11,7 +11,7 @@ import UIKit
 import SDWebImage
 import AVKit
 
-protocol TrackMovingDelegate: class {
+protocol TrackMovingDelegate {
     func moveBackwarForPreviousTrack() -> SearchViewModel.Cell?
     func moveForwardForPreviousTrack() -> SearchViewModel.Cell?
 }
@@ -26,7 +26,7 @@ class TrackDetailView: UIView {
         return avPlayer
     }()
     
-    weak var delegate: TrackMovingDelegate?
+    var delegate: TrackMovingDelegate?
     weak var tabBarDelegate: MainTabBarControllerDelegate?
     
     @IBOutlet weak var miniTrackView: UIView!
