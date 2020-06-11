@@ -24,6 +24,8 @@ struct Library: View {
                     HStack(spacing: 20) {
                         Button(action: {
                             print("DEBUG: 12345")
+                            self.track = self.tracks[0]
+                            self.tabBarDeleggate?.maximazedTrackDetailController(viewModel: self.track)
                         }, label: {
                             Image(systemName: "play.fill")
                                 .frame(width: geometry.size.width / 2 - 10, height: 50)
@@ -32,7 +34,7 @@ struct Library: View {
                                 .cornerRadius(10)
                         })
                         Button(action: {
-                            print("DEBUG: 54321")
+                            self.tracks = UserDefaults.standard.savedTracks()
                         }, label: {
                             Image(systemName: "arrow.2.circlepath")
                                 .frame(width: geometry.size.width / 2 - 10, height: 50)
