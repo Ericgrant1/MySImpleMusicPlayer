@@ -39,7 +39,8 @@ class MainTabBarController: UITabBarController {
         
         searchVC.tabBarDelegate = self
         
-        let library = Library()
+        var library = Library()
+        library.tabBarDeleggate = self
         let hostVC = UIHostingController(rootView: library)
         hostVC.tabBarItem.image = #imageLiteral(resourceName: "ios10-apple-music-library-5nav-icon")
         hostVC.tabBarItem.title = "Library"

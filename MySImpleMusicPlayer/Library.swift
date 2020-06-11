@@ -15,6 +15,8 @@ struct Library: View {
     @State private var showAlert = false
     @State private var track: SearchViewModel.Cell!
     
+    var tabBarDeleggate: MainTabBarControllerDelegate?
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -45,11 +47,18 @@ struct Library: View {
                 
                 List {
                     ForEach(tracks) { track in
-                        LibraryCell(cell: track).gesture(LongPressGesture().onEnded({ _ in
-                            print("DEBUG: Pressed..")
-                            self.track = track
-                            self.showAlert = true
-                        }))
+                        LibraryCell(cell: track).gesture(
+                            LongPressGesture()
+                                .onEnded({ _ in
+                                    print("DEBUG: Pressed..")
+                                    self.track = track
+                                    self.showAlert = true
+                                })
+                                .simultaneously(with: TapGesture()
+                                    .onEnded({ _ in
+                                        self.track = track
+                                        self.tabBarDeleggate?.maximazedTrackDetailController(viewModel: self.track)
+                                    })))
                     }.onDelete(perform: delete)
                 }
             }.actionSheet(isPresented: $showAlert, content: {
